@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 lazy_static! {
-    static ref NPMRC: PathBuf = dirs::home_dir().expect("home dir not found").join(".nrm");
+    static ref NPMRC: PathBuf = dirs::home_dir().expect("home dir not found").join(".npmrc");
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -38,7 +38,7 @@ impl TryFrom<Value> for Registry {
 }
 
 fn main() {
-    let app = Command::new("nrm-rs")
+    let app = Command::new("rnrm")
         .version("0.0.1")
         .author("xiefeng")
         .about("a rust version of nrm")
